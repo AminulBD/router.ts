@@ -1,0 +1,7 @@
+{
+  "name": "@aminulbd/router",
+  "version": "1.0.0-alpha.1",
+  "description": "Router for modern developers with Web APIs",
+  "license": "MIT",
+  "exports": "./router.ts"
+}

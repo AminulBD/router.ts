@@ -1,0 +1,34 @@
+name: Publish
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish to JSR
+        run: npx jsr publish
+
+      - name: Publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+          npm publish --registry=https://registry.npmjs.org/ --scope=@aminulbd
+
+      - name: Publish GitHub's' Registry
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          echo "//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+          npm publish --registry=https://npm.pkg.github.com/ --scope=@aminulbd

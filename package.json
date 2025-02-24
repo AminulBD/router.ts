@@ -1,0 +1,24 @@
+{
+  "name": "@aminulbd/router",
+  "version": "1.0.0-alpha.1",
+  "description": "Router for modern developers with Web APIs",
+  "license": "MIT",
+  "main": "./router.ts",
+  "author": "Aminul Islam <me@aminul.net>",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AminulBD/router.ts.git"
+  },
+  "files": [
+    "./router.ts"
+  ],
+  "keywords": [
+    "router",
+    "web",
+    "api"
+  ],
+  "bugs": {
+    "url": "https://github.com/AminulBD/router.ts/issues"
+  },
+  "homepage": "https://github.com/AminulBD/router.ts#readme"
+}
